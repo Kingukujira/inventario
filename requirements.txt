@@ -1,5 +1,7 @@
-Django==4.2.3
-psycopg
-djangorestframework
-drf-yasg
-coreapi
+coreapi==2.3.3 #
+Django==4.2.3 # -
+djangorestframework==3.15.2 #-
+drf-yasg==1.21.7 #-
+psycopg2==2.9.9 #
+setuptools==74.0.0 #
+python-dotenv==1.0.1 #-

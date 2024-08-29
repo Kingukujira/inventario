@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db-inventario:
+    image: postgres:13
+    ports:
+      - "9999:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: inventario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db-inventario
+
+volumes:
+  postgres_data:
