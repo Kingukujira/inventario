@@ -6,10 +6,16 @@ from django.db import models
 class Departamento(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
 
+    def __str__(self):
+        return self.nombre
+
 
 class Municipio(models.Model):
     nombre = models.CharField(max_length=100)
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
 
 
 class SitioTuristico(models.Model):
@@ -21,9 +27,15 @@ class SitioTuristico(models.Model):
     tipo = models.CharField(max_length=50, blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.nombre
+
 
 class TipoServicio(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.nombre
 
 
 class Servicio(models.Model):
@@ -34,6 +46,9 @@ class Servicio(models.Model):
     sitio_turistico = models.ForeignKey(SitioTuristico, on_delete=models.CASCADE)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.nombre
+
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     correo_electronico = models.EmailField(max_length=100, unique=True)
@@ -41,9 +56,15 @@ class Usuario(models.Model):
     password = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.nombre
+
 class Comentario(models.Model):
     sitio_turistico = models.ForeignKey(SitioTuristico, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     comentario = models.TextField()
     rating = models.IntegerField()
     fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.comentario
