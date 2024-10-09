@@ -6,7 +6,7 @@ import { TipoServicio } from './pages/tipo_servicio';
 import { Servicio } from './pages/servicio';
 import { Usuario } from './pages/usuario';
 import { Comentario } from './pages/comentario';
-import { FormPage } from './pages/formPage';
+import { FormPage } from './FormPages/formPage';
 import { Navigation } from './components/Navigation';
 import './App.css';
 
@@ -30,7 +30,7 @@ function App() {
             </>
           }
         />
-        <Route path="/inventario-create" element={<FormPage />} />
+        <Route path="/inventario" element={<FormPage />} />
       </Routes>
     </BrowserRouter>
   );

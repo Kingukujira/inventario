@@ -6,7 +6,9 @@ export function Navigation() {
     <Link to="/crear formulario">
      <h1>Crear formulario</h1>
      </Link>
-        <Link to="/inventario-create">Crear</Link>
+        <Link to="/Inventario">
+        <h1>Inventario</h1>
+        </Link>
     </div>
   )
 }
