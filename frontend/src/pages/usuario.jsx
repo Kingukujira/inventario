@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Swal from 'sweetalert2'; // SweetAlert2 para mensajes de éxito y error
+import Swal from 'sweetalert2'; 
 
 export function Usuario() {
   // Estados para manejar datos del formulario
   const [nombreUsuario, setNombreUsuario] = useState('');
   const [correoUsuario, setCorreoUsuario] = useState('');
   const [passwordUsuario, setPasswordUsuario] = useState('');
-  const [, setUsuarioId] = useState(null); // Para manejar el ID del usuario a actualizar
+  const [, setUsuarioId] = useState(null); 
   const [usuarios, setUsuarios] = useState([]); // Lista de usuarios
 
   // Función para obtener la lista de usuarios
