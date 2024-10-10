@@ -5,3 +5,5 @@ drf-yasg==1.21.7 #-
 psycopg
 setuptools==74.0.0 #
 python-dotenv==1.0.1 #-
+SweetAlert2
+axios
